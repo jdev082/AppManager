@@ -1,12 +1,10 @@
 @echo off
 
 :Menu
-echo If winget isn't installed, this script will not work
-echo If on Windows 11 (if you aren't close the script it wont work) just run the updates shown in the ms store then run the script
 Echo ----------------------------------------------------------------
 Echo App Manager, select the apps you want to install
 Echo Ver: 21.10.18.2188
-Echo: If you are running Windows 10, close the script. It won't work.
+Echo If you are running Windows 10, make sure to install winget
 Echo ----------------------------------------------------------------
 Echo 1 - Visual Studio Code
 Echo 2 - Notepad++
