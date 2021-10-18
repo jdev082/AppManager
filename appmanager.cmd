@@ -13,6 +13,7 @@ Echo 2 - Notepad++
 Echo 3 - Firefox
 Echo 4 - Chrome
 Echo 5 - Scratch 3
+Echo 6 - Turbowarp
 echo Exit - Type Exit to exit the script
 
 Set /P App=Selection #
@@ -22,6 +23,7 @@ If %App%==2 GOTO NPP
 If %App%==3 GOTO FF
 If %App%==4 GOTO GGL
 If %App%==5 GOTO SCR3
+If %App%==6 GOTO TW
 If %App%==Exit GOTO Exit
 
 :VSCODE
@@ -47,6 +49,11 @@ GOTO Menu
 :SCR3
 echo Installing Scratch3
 winget install -e MITMediaLab.Scratch.3
+GOTO Menu
+
+:TW
+echo Installing Turbowarp
+winget install -e GarboMuffin.TurboWarp
 GOTO Menu
 
 :Exit
