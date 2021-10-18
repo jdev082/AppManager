@@ -28,6 +28,7 @@ If %App%==5 GOTO SCR3
 If %App%==6 GOTO TW
 If %App%==7 GOTO FF-ESR
 If %App%==8 GOTO FF-NIGHTLY
+If %App%==9 GOTO PY3
 If %App%==Exit GOTO Exit
 
 :VSCODE
@@ -68,6 +69,11 @@ GOTO Menu
 :FF-NIGHTLY
 echo Installing Firefox Nightly
 winget install -e Mozilla.Firefox.Nightly
+GOTO Menu
+
+:PY3
+echo Installing Python 3
+winget install -e Python.Python.3
 GOTO Menu
 
 :Exit
