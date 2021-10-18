@@ -16,6 +16,7 @@ Echo 5 - Scratch 3
 Echo 6 - Turbowarp
 Echo 7 - Firefox ESR
 echo 8 - Firefox Nightly
+echo 9 - Python 3
 echo Exit - Type Exit to exit the script
 
 Set /P App=Selection #
