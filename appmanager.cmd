@@ -17,6 +17,8 @@ echo 8 - Firefox Nightly
 echo 9 - Python 3
 echo 10 - Python 2
 echo 11 - Ubuntu 20.04 (WSL)
+echo 12 - Spotify
+echo 13 PyCharm Community
 echo Exit - Type Exit to exit the script
 
 Set /P App=Selection #
@@ -32,6 +34,8 @@ If %App%==8 GOTO FF-NIGHTLY
 If %App%==9 GOTO PY3
 If %App%==10 GOTO PY2
 If %App%==11 GOTO UBUWSL
+If %App%==12 GOTO SPOTIFY
+If %App%==13 GOTO PYCHARM
 If %App%==Exit GOTO Exit
 
 :VSCODE
@@ -88,6 +92,21 @@ GOTO Menu
 echo Installing Ubuntu WSL
 winget install -e Canonical.Ubuntu
 GOTO Menu
+
+:SPOTIFY
+echo Installing Spotify
+winget install -e Spotify.Spotify
+GOTO Menu
+
+:PYCHARM
+echo Installing PyCharm
+winget install -e JetBrains.PyCharm.Community
+GOTO Menu
+
+:Custom
+echo Installing requested app.
+Set /P SEL=STRING: 
+winget search %SEL%
 
 :Exit
 exit
