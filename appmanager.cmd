@@ -18,6 +18,7 @@ Echo 7 - Firefox ESR
 echo 8 - Firefox Nightly
 echo 9 - Python 3
 echo 10 - Python 2
+echo 11 - Ubuntu 20.04 (WSL)
 echo Exit - Type Exit to exit the script
 
 Set /P App=Selection #
@@ -32,6 +33,7 @@ If %App%==7 GOTO FF-ESR
 If %App%==8 GOTO FF-NIGHTLY
 If %App%==9 GOTO PY3
 If %App%==10 GOTO PY2
+If %App%==11 GOTO UBUWSL
 If %App%==Exit GOTO Exit
 
 :VSCODE
@@ -82,6 +84,11 @@ GOTO Menu
 :PY2
 echo Installing Python 2
 winget install -e Python.Python.2
+GOTO Menu
+
+:UBUWSL
+echo Installing Ubuntu WSL
+winget install -e Canonical.Ubuntu
 GOTO Menu
 
 :Exit
