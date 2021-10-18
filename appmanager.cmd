@@ -19,6 +19,12 @@ echo 10 - Python 2
 echo 11 - Ubuntu 20.04 (WSL)
 echo 12 - Spotify
 echo 13 PyCharm Community
+echo ------------------------
+echo Groups (testing, unstable)
+echo ------------------------
+echo 14 Web Development (Group)
+echo 15 Python Development (Group)
+echo 16 Scratch Development (Group)
 echo Exit - Type Exit to exit the script
 
 Set /P App=Selection #
@@ -36,6 +42,9 @@ If %App%==10 GOTO PY2
 If %App%==11 GOTO UBUWSL
 If %App%==12 GOTO SPOTIFY
 If %App%==13 GOTO PYCHARM
+If %App%==14 GOTO WEBDEV
+If %App%==15 GOTO PYDEV
+If %App%==16 GOTO SCRDEV
 If %App%==Exit GOTO Exit
 
 :VSCODE
@@ -102,6 +111,19 @@ GOTO Menu
 echo Installing PyCharm
 winget install -e JetBrains.PyCharm.Community
 GOTO Menu
+
+:WEBDEV
+winget install -e Mozilla.Firefox
+winget install -e Microsoft.VisualStudioCode
+
+:PYDEV
+winget install -e Python.Python.3
+winget install -e JetBrains.PyCharm.Community
+
+:SCRDEV
+winget install -e MITMediaLab.Scratch.3
+winget install -e GarboMuffin.TurboWarp
+
 
 :Custom
 echo Installing requested app.
