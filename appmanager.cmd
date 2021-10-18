@@ -17,6 +17,7 @@ Echo 6 - Turbowarp
 Echo 7 - Firefox ESR
 echo 8 - Firefox Nightly
 echo 9 - Python 3
+echo 10 - Python 2
 echo Exit - Type Exit to exit the script
 
 Set /P App=Selection #
@@ -30,6 +31,7 @@ If %App%==6 GOTO TW
 If %App%==7 GOTO FF-ESR
 If %App%==8 GOTO FF-NIGHTLY
 If %App%==9 GOTO PY3
+If %App%==10 GOTO PY2
 If %App%==Exit GOTO Exit
 
 :VSCODE
@@ -75,6 +77,11 @@ GOTO Menu
 :PY3
 echo Installing Python 3
 winget install -e Python.Python.3
+GOTO Menu
+
+:PY2
+echo Installing Python 2
+winget install -e Python.Python.2
 GOTO Menu
 
 :Exit
