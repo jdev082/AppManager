@@ -14,6 +14,8 @@ Echo 3 - Firefox
 Echo 4 - Chrome
 Echo 5 - Scratch 3
 Echo 6 - Turbowarp
+Echo 7 - Firefox ESR
+echo 8 - Firefox Nightly
 echo Exit - Type Exit to exit the script
 
 Set /P App=Selection #
@@ -24,6 +26,8 @@ If %App%==3 GOTO FF
 If %App%==4 GOTO GGL
 If %App%==5 GOTO SCR3
 If %App%==6 GOTO TW
+If %App%==7 GOTO FF-ESR
+If %App%==8 GOTO FF-NIGHTLY
 If %App%==Exit GOTO Exit
 
 :VSCODE
@@ -54,6 +58,16 @@ GOTO Menu
 :TW
 echo Installing Turbowarp
 winget install -e GarboMuffin.TurboWarp
+GOTO Menu
+
+:FF-ESR
+echo Installing Firefox ESR
+winget install -e Mozilla.FirefoxESR
+GOTO Menu
+
+:FF-NIGHTLY
+echo Installing Firefox Nightly
+winget install -e Mozilla.Firefox.Nightly
 GOTO Menu
 
 :Exit
