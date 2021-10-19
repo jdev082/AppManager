@@ -19,6 +19,8 @@ echo 10 - Python 2
 echo 11 - Ubuntu 20.04 (WSL)
 echo 12 - Spotify
 echo 13 PyCharm Community
+echo 17 Windows Terminal
+echo 18 Windows PC Health Check
 echo ------------------------
 echo Groups (testing, unstable)
 echo ------------------------
@@ -45,6 +47,8 @@ If %App%==13 GOTO PYCHARM
 If %App%==14 GOTO WEBDEV
 If %App%==15 GOTO PYDEV
 If %App%==16 GOTO SCRDEV
+If %App%==17 GOTO WINTERM
+If %App%==18 GOTO WINPCHEALTH
 If %App%==Exit GOTO Exit
 
 :VSCODE
@@ -113,17 +117,27 @@ winget install -e JetBrains.PyCharm.Community
 GOTO Menu
 
 :WEBDEV
+echo Installing WebDev Group. (2 packages)
 winget install -e Mozilla.Firefox
 winget install -e Microsoft.VisualStudioCode
 
 :PYDEV
+echo Installing Python Development group. (2 packages)
 winget install -e Python.Python.3
 winget install -e JetBrains.PyCharm.Community
 
 :SCRDEV
+echo Installing Scratch Development group. (2 Packages)
 winget install -e MITMediaLab.Scratch.3
 winget install -e GarboMuffin.TurboWarp
 
+:WINTERM
+echo Installing Windows Terminal
+winget install -e 9N0DX20HK701
+
+:WINPCHEALTH
+echo Installing Windows PC Health Checker
+winget install -e Microsoft.WindowsPCHealthCheck
 
 :Custom
 echo Installing requested app.
