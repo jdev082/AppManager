@@ -3,7 +3,7 @@
 :Menu
 Echo ----------------------------------------------------------------
 Echo App Manager, select the apps you want to install
-Echo Ver: 21.10.18.2188
+Echo Ver: 21.10.18.2199
 Echo If you are running Windows 10, make sure to install winget
 Echo ----------------------------------------------------------------
 Echo 1 - Visual Studio Code
@@ -53,91 +53,91 @@ If %App%==Exit GOTO Exit
 
 :VSCODE
 echo Installing VSCODE
-winget install -e Microsoft.VisualStudioCode
+winget install --silent -e Microsoft.VisualStudioCode
 GOTO Menu
 
 :NPP
 echo Installing NPP
-winget install -e Notepad++.Notepad++
+winget install --silent -e Notepad++.Notepad++
 GOTO Menu
 
 :FF
 echo Installing Firefox
-winget install -e Mozilla.Firefox
+winget install --silent -e Mozilla.Firefox
 GOTO Menu
 
 :GGL
 echo Installing Chrome
-winget install -e Google.Chrome
+winget install --silent -e Google.Chrome
 GOTO Menu
 
 :SCR3
 echo Installing Scratch3
-winget install -e MITMediaLab.Scratch.3
+winget install --silent -e MITMediaLab.Scratch.3
 GOTO Menu
 
 :TW
 echo Installing Turbowarp
-winget install -e GarboMuffin.TurboWarp
+winget install --silent -e GarboMuffin.TurboWarp
 GOTO Menu
 
 :FF-ESR
 echo Installing Firefox ESR
-winget install -e Mozilla.FirefoxESR
+winget install --silent -e Mozilla.FirefoxESR
 GOTO Menu
 
 :FF-NIGHTLY
 echo Installing Firefox Nightly
-winget install -e Mozilla.Firefox.Nightly
+winget install --silent -e Mozilla.Firefox.Nightly
 GOTO Menu
 
 :PY3
 echo Installing Python 3
-winget install -e Python.Python.3
+winget install --silent -e Python.Python.3
 GOTO Menu
 
 :PY2
 echo Installing Python 2
-winget install -e Python.Python.2
+winget install --silent -e Python.Python.2
 GOTO Menu
 
 :UBUWSL
 echo Installing Ubuntu WSL
-winget install -e Canonical.Ubuntu
+winget install --silent -e Canonical.Ubuntu
 GOTO Menu
 
 :SPOTIFY
 echo Installing Spotify
-winget install -e Spotify.Spotify
+winget install --silent -e Spotify.Spotify
 GOTO Menu
 
 :PYCHARM
 echo Installing PyCharm
-winget install -e JetBrains.PyCharm.Community
+winget install --silent -e JetBrains.PyCharm.Community
 GOTO Menu
 
 :WEBDEV
 echo Installing WebDev Group. (2 packages)
-winget install -e Mozilla.Firefox
-winget install -e Microsoft.VisualStudioCode
+winget install --silent -e Mozilla.Firefox
+winget install --silent -e Microsoft.VisualStudioCode
 
 :PYDEV
 echo Installing Python Development group. (2 packages)
-winget install -e Python.Python.3
-winget install -e JetBrains.PyCharm.Community
+winget install --silent -e Python.Python.3
+winget install --silent -e JetBrains.PyCharm.Community
 
 :SCRDEV
 echo Installing Scratch Development group. (2 Packages)
-winget install -e MITMediaLab.Scratch.3
-winget install -e GarboMuffin.TurboWarp
+winget install --silent -e MITMediaLab.Scratch.3
+winget install --silent -e GarboMuffin.TurboWarp
 
 :WINTERM
 echo Installing Windows Terminal
-winget install -e 9N0DX20HK701
+winget install --silent -e 9N0DX20HK701
 
 :WINPCHEALTH
 echo Installing Windows PC Health Checker
-winget install -e Microsoft.WindowsPCHealthCheck
+winget install --silent -e Microsoft.WindowsPCHealthCheck
 
 :Custom
 echo Installing requested app.
