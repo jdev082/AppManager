@@ -10,6 +10,6 @@ Release: ![image](https://user-images.githubusercontent.com/92550746/137825534-0
 # Planned Features
 Parallel Installing/Downloading (Downloading/Installing more than one app at the same time \
 Selection Menu when installing via Groups (To prevent unwanted apps being installed) \
-Make winget quiet and stop spamming the terminal with useless crap. \
-Supress application installer popups \
+Make winget quiet and stop spamming the terminal with useless crap. (Done) \
+Supress application installer popups \ (Done)
 Supress admin popups
