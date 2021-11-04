@@ -129,14 +129,20 @@ winget install -e MITMediaLab.Scratch.3
 winget install -e GarboMuffin.TurboWarp
 
 :GHDESK
-echo Installing Github Desktop
+echo Installing Github Desktop [Github.GitHubDesktop]
 winget install -e GitHub.GitHubDesktop
 
 :PG2
 echo Page: 2
+echo -----
+echo 1 - Steam [Valve.Steam]
 echo Select an app
-Set /P App=Selection #
+Set /P AppPG2=Selection #
+IF %AppPG2%=1 GOTO Steam
 
+:Steam
+echo Installing Steam [Valve.Steam]
+winget install -e Valve.Steam
 
 :Custom
 echo Installing requested app.
