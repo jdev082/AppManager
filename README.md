@@ -1,3 +1,6 @@
+# Dead Project
+This project is dead, and unmaintained. If the current available release does not work. Download a fork of the project. \
+I no longer use Windows, so I have no machine to test this software on. Pull requests will be accepted to keep this in working state.
 # AppManager
  Easy app manager for Windows 11.
 # Latest Release
