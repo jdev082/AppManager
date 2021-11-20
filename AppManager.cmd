@@ -3,7 +3,7 @@
 :Menu
 Echo ----------------------------------------------------------------
 Echo App Manager, select the apps you want to install
-Echo Ver: 21.11.2.2218-constant commit ####\#
+Echo Ver: 21.11.20.2285
 Echo If you are running Windows 10, make sure to install winget
 Echo ----------------------------------------------------------------
 Echo 1 - Visual Studio Code
@@ -19,14 +19,13 @@ echo 10 - Python 2
 echo 11 - Ubuntu 20.04 (WSL)
 echo 12 - Spotify
 echo 13 - PyCharm Community
-echo 17 - Github Desktop
-echo 18 - Next Page
+echo "n" - Page 2
 echo ------------------------
-echo Groups (testing, unstable)
-echo ------------------------
-echo 14 Web Development (Group)
-echo 15 Python Development (Group)
-echo 16 Scratch Development (Group)
+#echo Groups (testing, unstable)
+#echo ------------------------
+#echo 14 Web Development (Group)
+#echo 15 Python Development (Group)
+#echo 16 Scratch Development (Group)
 echo Exit - Type Exit to exit the script
 
 Set /P App=Selection #
@@ -44,118 +43,104 @@ If %App%==10 GOTO PY2
 If %App%==11 GOTO UBUWSL
 If %App%==12 GOTO SPOTIFY
 If %App%==13 GOTO PYCHARM
-If %App%==14 GOTO WEBDEV
-If %App%==15 GOTO PYDEV
-If %App%==16 GOTO SCRDEV
-If %App%==17 GOTO GHDESK
-If %App%==18 GOTO PG2
+#If %App%==14 GOTO WEBDEV
+#If %App%==15 GOTO PYDEV
+#If %App%==16 GOTO SCRDEV
+If %App%="n" GOTO PG2
 If %App%==Exit GOTO Exit
 
 :VSCODE
 echo Installing VSCODE
-winget install -e Microsoft.VisualStudioCode
+winget install --silent Microsoft.VisualStudioCode
 GOTO Menu
 
 :NPP
 echo Installing NPP
-winget install -e Notepad++.Notepad++
+winget install --silent Notepad++.Notepad++
 GOTO Menu
 
 :FF
 echo Installing Firefox
-winget install -e Mozilla.Firefox
+winget install --silent Mozilla.Firefox
 GOTO Menu
 
 :GGL
 echo Installing Chrome
-winget install -e Google.Chrome
+winget install --silent Google.Chrome
 GOTO Menu
 
 :SCR3
 echo Installing Scratch3
-winget install -e MITMediaLab.Scratch.3
+winget install --silent MITMediaLab.Scratch.3
 GOTO Menu
 
 :TW
 echo Installing Turbowarp
-winget install -e GarboMuffin.TurboWarp
+winget install --silent GarboMuffin.TurboWarp
 GOTO Menu
 
 :FF-ESR
 echo Installing Firefox ESR
-winget install -e Mozilla.FirefoxESR
+winget install --silent Mozilla.FirefoxESR
 GOTO Menu
 
 :FF-NIGHTLY
 echo Installing Firefox Nightly
-winget install -e Mozilla.Firefox.Nightly
+winget install --silent Mozilla.Firefox.Nightly
 GOTO Menu
 
 :PY3
 echo Installing Python 3
-winget install -e Python.Python.3
+winget install --silent Python.Python.3
 GOTO Menu
 
 :PY2
 echo Installing Python 2
-winget install -e Python.Python.2
+winget install --silent Python.Python.2
 GOTO Menu
 
 :UBUWSL
 echo Installing Ubuntu WSL
-winget install -e Canonical.Ubuntu
+winget install --silent Canonical.Ubuntu
 GOTO Menu
 
 :SPOTIFY
 echo Installing Spotify
-winget install -e Spotify.Spotify
+winget install --silent Spotify.Spotify
 GOTO Menu
 
 :PYCHARM
 echo Installing PyCharm
-winget install -e JetBrains.PyCharm.Community
+winget install --silent JetBrains.PyCharm.Community
 GOTO Menu
 
 :WEBDEV
-winget install -e Mozilla.Firefox
-winget install -e Microsoft.VisualStudioCode
+winget install --silent Mozilla.Firefox
+winget install --silent Microsoft.VisualStudioCode
 
 :PYDEV
-winget install -e Python.Python.3
-winget install -e JetBrains.PyCharm.Community
+winget install --silent Python.Python.3
+winget install --silent JetBrains.PyCharm.Community
 
 :SCRDEV
-winget install -e MITMediaLab.Scratch.3
-winget install -e GarboMuffin.TurboWarp
+winget install --silent MITMediaLab.Scratch.3
+winget install --silent GarboMuffin.TurboWarp
 
-:GHDESK
-echo Installing Github Desktop [Github.GitHubDesktop]
-winget install -e GitHub.GitHubDesktop
-
-:PG2
-echo Page: 2
-echo -----
-echo 1 - Steam [Valve.Steam]
-echo Select an app
-Set /P AppPG2=Selection #
-IF %AppPG2%=1 GOTO Steam
-
-:Steam
-echo Installing Steam [Valve.Steam]
-winget install -e Valve.Steam
 
 :Custom
 echo Installing requested app.
 Set /P SEL=STRING: 
 winget search %SEL%
 
+:PG 2
+echo 1 - Github Desktop
+Set /P AppPG2=Selection #
+
+IF %AppPG2%=1 GOTO GHDESK
+
+:GHDESK
+winget install --silent GitHub.GitHubDesktop
+GOTO Menu
+
 :Exit
-exit
-
-WHERE winget
-IF %ERRORLEVEL% NEQ 0 GOTO err
-
-:err
-echo Winget is not installed, please install it
-echo Exiting, error code 0811
 exit

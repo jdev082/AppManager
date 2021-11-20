@@ -1,6 +1,6 @@
-# Dead Project
-This project is dead, and unmaintained. If the current available release does not work. Download a fork of the project. \
-I no longer use Windows, so I have no machine to test this software on. Pull requests will be accepted to keep this in working state.
+# AppManager is back
+The planned 0.2 release is going to be reset do to several bugs and issues \
+0.2 will release soon with all the announced features
 # AppManager
  Easy app manager for Windows 11.
 # Latest Release
@@ -12,7 +12,7 @@ Dev: ![image](https://user-images.githubusercontent.com/92550746/137825530-dc83f
 Release: ![image](https://user-images.githubusercontent.com/92550746/137825534-066c4f16-2a59-4a65-a31a-ac2513ff249d.png)
 # Planned Features
 Parallel Installing/Downloading (Downloading/Installing more than one app at the same time \
-Selection Menu when installing via Groups (To prevent unwanted apps being installed) \
+Selection Menu when installing via Groups (To prevent unwanted apps being installed) (Groups disabled in new build)\
 Make winget quiet and stop spamming the terminal with useless crap. (Done) \
 Supress application installer popups \ (Done)
 Supress admin popups
