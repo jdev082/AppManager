@@ -19,13 +19,9 @@ echo 10 - Python 2
 echo 11 - Ubuntu 20.04 (WSL)
 echo 12 - Spotify
 echo 13 - PyCharm Community
+echo 17 - Chromium (Stable/Sync/Hibbiki)
 echo "n" - Page 2
 echo ------------------------
-#echo Groups (testing, unstable)
-#echo ------------------------
-#echo 14 Web Development (Group)
-#echo 15 Python Development (Group)
-#echo 16 Scratch Development (Group)
 echo Exit - Type Exit to exit the script
 
 Set /P App=Selection #
@@ -43,9 +39,7 @@ If %App%==10 GOTO PY2
 If %App%==11 GOTO UBUWSL
 If %App%==12 GOTO SPOTIFY
 If %App%==13 GOTO PYCHARM
-#If %App%==14 GOTO WEBDEV
-#If %App%==15 GOTO PYDEV
-#If %App%==16 GOTO SCRDEV
+If %App%==17 GOTO CHROMIUM
 If %App%="n" GOTO PG2
 If %App%==Exit GOTO Exit
 
@@ -54,6 +48,12 @@ echo Installing VSCODE
 winget install --silent Microsoft.VisualStudioCode
 GOTO Menu
 
+:CHROMIUM
+mkdir dl
+curl -L https://github.com/Hibbiki/chromium-win64/releases/latest/download/mini_installer.sync.exe -o dl\ChromiumInstaller.exe
+dl\ChromiumInstaller.exe
+GOTO Menu
+             
 :NPP
 echo Installing NPP
 winget install --silent Notepad++.Notepad++
