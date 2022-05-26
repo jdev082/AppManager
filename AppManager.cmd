@@ -3,7 +3,7 @@
 :Menu
 Echo ----------------------------------------------------------------
 Echo App Manager, select the apps you want to install
-Echo Ver: 1.1.0
+Echo Ver: 1.0.0
 Echo If you are running Windows 10, make sure to install winget
 Echo ----------------------------------------------------------------
 Echo 1 - Visual Studio Code
