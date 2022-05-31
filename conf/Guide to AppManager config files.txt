@@ -1,0 +1,5 @@
+AMCF stands for 'AppManager Config File' and these are very important! These files represent 2 options!
+A yes or no question. Instead of a config file, since this software uses batch. This method is used, to configure an option add a specific
+file with a specific name, or don't!
+
+The 'inst.amcf' file you see, tells the script wether an installation has been completed already. So the software doesn't crash upon an attempt to install when already installed.
