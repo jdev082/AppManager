@@ -15,12 +15,12 @@ Echo 6 - Turbowarp
 Echo 7 - Firefox ESR
 echo 8 - Firefox Nightly
 echo 9 - Python 3
-echo 10 - Python 2
 echo 11 - Ubuntu 20.04 (WSL)
 echo 12 - Spotify
 echo 13 - PyCharm Community
 echo 17 - Chromium (Stable/Sync/Hibbiki)
-echo "n" - Page 2
+echo ------------------------
+echo Type "install" to install AppManager
 echo ------------------------
 echo Exit - Type Exit to exit the script
 
@@ -35,13 +35,24 @@ If %App%==6 GOTO TW
 If %App%==7 GOTO FF-ESR
 If %App%==8 GOTO FF-NIGHTLY
 If %App%==9 GOTO PY3
-If %App%==10 GOTO PY2
 If %App%==11 GOTO UBUWSL
 If %App%==12 GOTO SPOTIFY
 If %App%==13 GOTO PYCHARM
 If %App%==17 GOTO CHROMIUM
-If %App%="n" GOTO PG2
+If %App%=="install" GOTO INST
 If %App%==Exit GOTO Exit
+
+:INST
+Echo Installing...
+If exist conf\inst.amcf (
+    del conf\inst.amcf
+    cmd /c "installer.bat"
+    exit
+) else (
+    echo This software has already been installed.
+    pause
+    GOTO Menu
+)
 
 :VSCODE
 echo Installing VSCODE
@@ -94,11 +105,6 @@ echo Installing Python 3
 winget install --silent Python.Python.3
 GOTO Menu
 
-:PY2
-echo Installing Python 2
-winget install --silent Python.Python.2
-GOTO Menu
-
 :UBUWSL
 echo Installing Ubuntu WSL
 winget install --silent Canonical.Ubuntu
@@ -114,33 +120,10 @@ echo Installing PyCharm
 winget install --silent JetBrains.PyCharm.Community
 GOTO Menu
 
-:WEBDEV
-winget install --silent Mozilla.Firefox
-winget install --silent Microsoft.VisualStudioCode
-
-:PYDEV
-winget install --silent Python.Python.3
-winget install --silent JetBrains.PyCharm.Community
-
-:SCRDEV
-winget install --silent MITMediaLab.Scratch.3
-winget install --silent GarboMuffin.TurboWarp
-
-
 :Custom
 echo Installing requested app.
 Set /P SEL=STRING: 
 winget search %SEL%
-
-:PG 2
-echo 1 - Github Desktop
-Set /P AppPG2=Selection #
-
-IF %AppPG2%=1 GOTO GHDESK
-
-:GHDESK
-winget install --silent GitHub.GitHubDesktop
-GOTO Menu
 
 :Exit
 exit
