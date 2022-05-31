@@ -19,6 +19,7 @@ echo 11 - Ubuntu 20.04 (WSL)
 echo 12 - Spotify
 echo 13 - PyCharm Community
 echo 17 - Chromium (Stable/Sync/Hibbiki)
+echo 18 - ExplorerPatcher
 echo ------------------------
 echo Type "install" to install AppManager
 echo ------------------------
@@ -39,6 +40,7 @@ If %App%==11 GOTO UBUWSL
 If %App%==12 GOTO SPOTIFY
 If %App%==13 GOTO PYCHARM
 If %App%==17 GOTO CHROMIUM
+If %App%==18 GOTO EXP
 If %App%=="install" GOTO INST
 If %App%==Exit GOTO Exit
 
@@ -64,7 +66,13 @@ mkdir dl
 curl -L https://github.com/Hibbiki/chromium-win64/releases/latest/download/mini_installer.sync.exe -o dl\ChromiumInstaller.exe
 dl\ChromiumInstaller.exe
 GOTO Menu
-             
+
+:EXP
+mkdir dl
+curl -L https://github.com/valinet/ExplorerPatcher/releases/latest/download/ep_setup.exe -o dl\ep_setup.exe
+cmd.exe /c "dl\ep_setup.exe"
+GOTO Menu
+  
 :NPP
 echo Installing NPP
 winget install --silent Notepad++.Notepad++
